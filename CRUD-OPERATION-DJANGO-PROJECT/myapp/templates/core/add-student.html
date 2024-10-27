@@ -1,0 +1,39 @@
+{% extends "core/base.html" %}
+
+{% block title %}Add Student{% endblock title %}
+
+{% block maincontent %}
+<section class="container">
+    <div class="row justify-content-center text-center text-white mt-1">
+        <div class="col-12">
+            <h3>Student Management Portal</h3>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <form action="" method="post" class="bg-white p-3 rounded shadow">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                {% if form.errors %}
+                    <div class="alert alert-danger">
+                        <ul>
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            {% endfor %}
+                            {% for error in form.non_field_errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+
+                <input type="submit" value="Submit" class="btn btn-primary w-100">
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock maincontent %}
