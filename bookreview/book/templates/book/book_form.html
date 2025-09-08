@@ -1,0 +1,48 @@
+{% extends "book/base.html" %}
+
+{% block title %}Book Form{% endblock title %}
+
+{% block content %}
+<div class="card shadow-sm border-0">
+  <div class="card-body">
+    <h3 class="mb-4">📘 Add / Update Book</h3>
+
+    <!-- Flash messages -->
+    {% if messages %}
+      {% for message in messages %}
+          <div class="alert alert-{{ message.tags }} alert-dismissible fade show shadow-sm">
+              {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+      {% endfor %}
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data" novalidate>
+      {% csrf_token %}
+      
+      <!-- Form errors -->
+      {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+          <div class="alert alert-danger">{{ error }}</div>
+        {% endfor %}
+      {% endif %}
+
+      <!-- Form fields -->
+      {% for field in form %}
+          <div class="mb-3">
+            <label for="{{ field.id_for_label }}" class="form-label fw-bold">{{ field.label }}</label>
+            {{ field }}
+            {% if field.help_text %}
+              <div class="form-text">{{ field.help_text }}</div>
+            {% endif %}
+            {% for error in field.errors %}
+              <div class="text-danger small">{{ error }}</div>
+            {% endfor %}
+          </div>
+      {% endfor %}
+
+      <button type="submit" class="btn btn-primary mt-3">💾 Save</button>
+    </form>
+  </div>
+</div>
+{% endblock content %}

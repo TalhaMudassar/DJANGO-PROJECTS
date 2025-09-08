@@ -1,0 +1,127 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+  background-color: aliceblue;
+}
+/* Style for navigation bar */
+nav {
+  background-color: #2c3e50; /* Dark background color */
+  padding: 10px 20px; /* Adds padding around the nav */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
+}
+
+nav li {
+  list-style: none; /* Removes bullet points */
+  display: inline-block; /* Makes the list horizontal */
+  margin-right: 15px; /* Space between items */
+}
+
+nav a {
+  text-decoration: none; /* Removes underline */
+  color: #ecf0f1; /* Light color for links */
+  font-size: 16px; /* Adjust the font size */
+  padding: 8px 15px; /* Padding around each link */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+  border-radius: 5px; /* Rounded corners */
+}
+
+nav a:hover {
+  background-color: #1abc9c; /* Changes background on hover */
+  color: #ffffff; /* White color on hover */
+}
+
+.main-heading{
+  text-align: center;
+  padding: 10px;
+  font-size: 3rem;
+}
+/* Center the container */
+.center-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Container for centering content */
+.container {
+  text-align: center; /* Center text inside the container */
+  background-color: #ffffff; /* White background for contrast */
+  padding: 20px; /* Padding around the container */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 400px; /* Responsive width */
+  width: 100%;
+}
+
+/* Style for the heading */
+h1 {
+  margin-top: 0; /* Remove default top margin */
+  font-size: 24px; /* Adjust the heading size */
+  color: #333; /* Darker text color */
+  margin-bottom: 20px; /* Space between the heading and the form */
+}
+
+/* Style for the form */
+form {
+  margin-bottom: 20px; /* Space between the form and the QR preview */
+}
+
+/* Style for the input */
+form input[type="text"] {
+  width: 100%; /* Full width input */
+  padding: 10px; /* Padding inside the input */
+  margin: 10px 0; /* Space between input and button */
+  border-radius: 5px; /* Rounded input corners */
+  border: 1px solid #ddd; /* Light border */
+  box-sizing: border-box; /* Make padding count towards the width */
+  font-size: 16px; /* Readable font size */
+}
+
+/* Style for the button */
+form button {
+  background-color: #1abc9c; /* Primary button color */
+  color: #ffffff; /* White text */
+  border: none; /* Remove default border */
+  padding: 10px 20px; /* Button padding */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+form button:hover {
+  background-color: #16a085; /* Darker shade on hover */
+}
+
+/* Style for the QR code preview container */
+.qr-preview {
+  background-color: #ffffff; /* White background */
+  padding: 20px; /* Padding around the preview */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center; /* Center text and image inside the container */
+}
+
+.qr-preview h2 {
+  margin-top: 0; /* Remove top margin for better spacing */
+  font-size: 20px; /* Adjust the heading size */
+  color: #333; /* Darker text color */
+}
+
+.qr-preview img {
+  max-width: 100%; /* Make sure the image is responsive */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: 10px; /* Space between heading and image */
+}
+
+.download-button {
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+}

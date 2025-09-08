@@ -1,0 +1,111 @@
+{% extends "core/base.html" %}
+{% block title %}
+Scan QR Code
+{% endblock title %}
+
+{% block content %}
+
+<div class="center-container">
+    <div class="container">
+        <h1>Scan QR Code</h1>
+        
+        {% if error %}
+            <div class="error-message">
+                {{ error }}
+            </div>
+        {% endif %}
+        
+        <form action="{% url 'scan_qr' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" name="mobile_number" placeholder="Enter 10-digit mobile number" required pattern="\d{10}">
+            <input type="file" name="qr_image" accept="image/*" id="qr-input" required>
+            <button type="submit">Scan QR Code</button>
+        </form>
+
+        <!-- Show result -->
+        <div class="qr-result">
+            <h3>Scan Result:</h3>
+            {% if result %}
+                <p class="result-text">{{ result }}</p>
+            {% else %}
+                <p class="no-scan">No scan performed yet.</p>
+            {% endif %}
+        </div>
+
+        <div class="navigation">
+            <a href="{% url 'generate_qr' %}">Generate QR Code</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .error-message {
+        background: #f8d7da;
+        color: #721c24;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #f5c6cb;
+    }
+    
+    .qr-result {
+        margin-top: 20px;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 5px;
+    }
+    
+    .result-text {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 0;
+    }
+    
+    .result-text:contains("✅") {
+        color: #28a745;
+    }
+    
+    .result-text:contains("❌") {
+        color: #dc3545;
+    }
+    
+    .result-text:contains("⚠️") {
+        color: #ffc107;
+    }
+    
+    .no-scan {
+        color: #6c757d;
+        margin: 0;
+    }
+    
+    .navigation {
+        margin-top: 20px;
+    }
+    
+    .navigation a {
+        color: #667eea;
+        text-decoration: none;
+    }
+    
+    .navigation a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<script>
+    // Simple JavaScript to apply color based on result content
+    document.addEventListener('DOMContentLoaded', function() {
+        const resultText = document.querySelector('.result-text');
+        if (resultText) {
+            if (resultText.textContent.includes('✅')) {
+                resultText.style.color = '#28a745';
+            } else if (resultText.textContent.includes('❌')) {
+                resultText.style.color = '#dc3545';
+            } else if (resultText.textContent.includes('⚠️')) {
+                resultText.style.color = '#ffc107';
+            }
+        }
+    });
+</script>
+
+{% endblock content %}

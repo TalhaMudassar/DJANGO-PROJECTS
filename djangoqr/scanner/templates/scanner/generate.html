@@ -1,0 +1,89 @@
+{% extends "core/base.html" %}
+{% block title %}
+Generate QR Code
+{% endblock title %}
+
+{% block content %}
+    
+<div class="center-container">
+    <div class="container">
+        <h1>Generate QR Code</h1>
+        
+        {% if error %}
+            <div class="error-message">
+                {{ error }}
+            </div>
+        {% endif %}
+        
+        <form action="{% url 'generate_qr' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="mobile_number" placeholder="Enter 10-digit mobile number" required pattern="\d{10}">
+            <input type="text" name="qr_data" placeholder="Enter text to generate QR code" required>
+            <button type="submit">Generate</button>
+        </form>
+
+        <div class="qr-preview">
+            {% if qr_image_url %}
+                <h2>Your QR Code:</h2>
+                <img src="{{ qr_image_url }}" alt="Generated QR Code">
+                <br>
+                <a href="{{ qr_image_url }}" download class="download-button">Download QR Code</a>
+            {% endif %}
+        </div>
+
+        <div class="navigation">
+            <a href="{% url 'scan_qr' %}">Scan QR Code</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .error-message {
+        background: #f8d7da;
+        color: #721c24;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #f5c6cb;
+    }
+    
+    .qr-preview {
+        margin-top: 20px;
+    }
+    
+    .qr-preview img {
+        max-width: 300px;
+        height: auto;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+    
+    .download-button {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 15px;
+        background: #28a745;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    
+    .download-button:hover {
+        background: #218838;
+    }
+    
+    .navigation {
+        margin-top: 20px;
+    }
+    
+    .navigation a {
+        color: #667eea;
+        text-decoration: none;
+    }
+    
+    .navigation a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+{% endblock content %}

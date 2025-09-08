@@ -1,0 +1,84 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}HOME{% endblock title %}
+
+{% block hero %}
+<!-- Hero Section -->
+<section class="bg-gradient-to-b from-orange-100 via-orange-50 to-white">
+  <div class="container mx-auto px-24 py-16 flex flex-col lg:flex-row items-center">
+    
+    <!-- Left Content -->
+    <div class="lg:w-1/2">
+      <h1 class="text-3xl lg:text-4xl font-bold text-gray-800">
+        Enjoy Delicious
+      </h1>
+      <h1 class="text-4xl lg:text-5xl font-bold text-orange-500 pt-5">
+        Traditional Food
+      </h1>
+      <p class="mt-4 text-gray-600">
+        Good food warms the heart and mends the soul.
+      </p>
+      <a href="#"
+         class="mt-6 inline-block bg-orange-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-orange-600">
+        Order Now →
+      </a>
+    </div>
+    
+    <!-- Right Image -->
+    <div class="lg:w-1/2 mt-10 lg:mt-0 flex justify-center">
+      <img src="{% static 'core/images/paneer.png' %}" 
+           alt="Paneer" 
+           class="w-3/4">
+    </div>
+
+  </div>
+</section>
+{% endblock hero %}
+
+{% block maincontent %}
+<!-- Popular Dish Section -->
+<section class="bg-gradient-to-t from-orange-100 via-orange-50 to-white">
+  <div class="container mx-auto px-24 py-16">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Popular Dishes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      {% for dish in popular_dishes %}
+        <div class="bg-gradient-to-b from-orange-100 via-orange-50 to-white shadow-md p-6 hover:shadow-xl transition-shadow duration-300">
+            <img src="{% static dish.image %}" alt="{{ dish.title }}" class="w-full h-48 object-cover">
+            <h3 class="text-2xl font-semibold text-gray-800 mt-4">{{ dish.title }}</h3>
+            <p class="text-gray-600 mt-2">{{ dish.description }}</p>
+            <a href="{{ dish.link }}" class="inline-block bg-orange-500 text-white mt-4 px-4 py-2 rounded-full hover:bg-orange-600">Order Now</a>
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+<!-- About Us Section -->
+<section class="bg-gradient-to-b from-orange-100 via-orange-50 to-white">
+  <div class="container mx-auto px-6 py-16">
+    <div class="text-center">
+        <h2 class="text-3xl font-bold text-gray-800">About Us</h2>
+        <p class="mt-4 text-gray-600">
+            We Provide Fresh and Healthy Food
+        </p>
+    </div>
+    <div class="flex justify-center mt-10">
+        <img src="{% static 'core/images/pasta.png' %}" alt="Healthy Pasta" class="w-1/2">
+    </div>
+  </div>
+</section>
+
+<!-- Chef Note -->
+<section class="bg-white py-10 px-6">
+  <div class="max-w-4xl mx-auto bg-orange-50 p-6 rounded-lg shadow-lg">
+    <p class="text-gray-800 text-xl font-light italic">
+      Dear Guest,<br><br>
+      Our passion is to serve you a meal that not only delights your taste buds but also warms your heart. Each dish is crafted with the freshest ingredients and a touch of love, ensuring an unforgettable dining experience. Let us take you on a culinary journey that you'll savor long after the last bite. We hope you enjoy every moment!<br><br>
+      <span class="text-orange-500 font-medium" style="font-family: 'Dancing Script', cursive;">Chef, Sonam</span>
+    </p>
+  </div>
+</section>
+{% endblock maincontent %}

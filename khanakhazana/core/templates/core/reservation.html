@@ -1,0 +1,31 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Reservation{% endblock %}
+{% block maincontent %}
+<div class="p-10 bg-gradient-to-b from-orange-100 via-orange-50 to-white">
+    <h2 class="text-5xl font-bold text-gray-800 mb-4 text-center" style="font-family: 'Dancing Script', cursive;">Make a Reservation</h2>
+    <form class="max-w-md mx-auto">
+        <div class="mb-4">
+            <label class="block text-gray-700">Name</label>
+            <input type="text" class="w-full border-orange-600 rounded px-3 py-2 bg-orange-50">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Date</label>
+            <input type="date" class="w-full border-orange-600 rounded px-3 py-2 bg-orange-50">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Time</label>
+            <input type="time" class="w-full border-orange-600 rounded px-3 py-2 bg-orange-50">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">No. of Guests</label>
+            <input type="number" class="w-full border-orange-600 rounded px-3 py-2 bg-orange-50" min="1">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700">Mobile No.</label>
+          <input type="text" class="w-full border-orange-600 rounded px-3 py-2 bg-orange-50">
+      </div>
+        <button class="bg-orange-500 text-white px-4 py-2 rounded">Book Now</button>
+    </form>
+</div>
+{% endblock %}

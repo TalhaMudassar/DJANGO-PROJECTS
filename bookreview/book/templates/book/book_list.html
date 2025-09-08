@@ -1,0 +1,61 @@
+{% extends "book/base.html" %}
+
+{% block title %}
+Books List
+{% endblock title %}
+
+{% block content %}
+<h2 class="mb-4">📖 Books Collection</h2>
+
+<!-- Filter section -->
+<div class="row mb-4">
+    <div class="col">
+        <div class="btn-group" role="group">
+            <a href="{% url 'book_list' %}"
+               class="btn btn-outline-primary {% if not request.GET.genre %}active{% endif %}">
+               All
+            </a>
+            {% for key, value in books.model.GENRE_CHOICES %}
+                <a href="?genre={{ key }}"
+                   class="btn btn-outline-primary {% if request.GET.genre == key %}active{% endif %}">
+                   {{ value }}
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Flash messages -->
+{% if messages %}
+  {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show shadow-sm">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      </div>
+  {% endfor %}
+{% endif %}
+
+<!-- Book cards -->
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    {% for book in books %}
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">{{ book.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">by {{ book.author }}</h6>
+                    <p class="card-text text-truncate" style="max-height: 4.5em; overflow: hidden;">
+                        {{ book.description|truncatewords:30 }}
+                    </p>
+                </div>
+                <div class="card-footer bg-white border-0">
+                    <a href="{% url 'book_detail' book.pk %}" class="btn btn-sm btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info">No books found.</div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock content %}
