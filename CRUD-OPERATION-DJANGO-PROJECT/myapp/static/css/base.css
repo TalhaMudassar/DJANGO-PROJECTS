@@ -1,0 +1,11 @@
+body {
+    background-color: #2cf070; /* Light grey background */
+}
+
+.container {
+    padding: 20px; /* Add padding around the container */
+}
+
+h1 {
+    color: #007bff; /* Bootstrap primary color */
+}
