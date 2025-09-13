@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+     margin:50px;
+    }
+    table, th, tr, td {
+      border: 1px solid black
+     }
+    </style>
+</head>
+<body>
+  <nav>
+    <ul><li><a href="{% url 'home' %}">Home</a></li></ul>
+    <ul><li><a href="{% url 'user' %}">User</a></li></ul>
+    <ul><li><a href="{% url 'page' %}">Page</a></li></ul>
+    <ul><li><a href="{% url 'post' %}">Post</a></li></ul>
+    <ul><li><a href="{% url 'song' %}">Song</a></li></ul>
+  </nav>
+  {% block content %}{% endblock content %}
+</body>
+</html>

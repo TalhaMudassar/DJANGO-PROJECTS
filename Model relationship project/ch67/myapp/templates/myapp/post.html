@@ -1,0 +1,48 @@
+{% extends "myapp/base.html" %}
+{% block content %}
+<table>
+<h3>Post All Data</h3>
+ <th>Post Title</th>
+ <th>Post Category</th>
+ <th>Published Date</th>
+ <th>Posted By</th>
+ {% for dt1 in data1 %}
+  <tr>
+   <td>{{dt1.title}}</td>
+   <td>{{dt1.ptcat}}</td>
+   <td>{{dt1.ptpublished}}</td>
+   <td>{{dt1.user}}</td>
+  </tr>
+ {% endfor %}
+</table>
+<table>
+<h3>Post Filtered by Post Published Date</h3>
+ <th>Post Title</th>
+ <th>Post Category</th>
+ <th>Published Date</th>
+ <th>Posted By</th>
+ {% for dt2 in data2 %}
+  <tr>
+   <td>{{dt2.title}}</td>
+   <td>{{dt2.ptcat}}</td>
+   <td>{{dt2.ptpublished}}</td>
+   <td>{{dt2.user}}</td>
+  </tr>
+ {% endfor %}
+</table>
+<table>
+<h3>Post Filtered by User username</h3>
+ <th>Post Title</th>
+ <th>Post Category</th>
+ <th>Published Date</th>
+ <th>Posted By</th>
+ {% for dt3 in data3 %}
+  <tr>
+   <td>{{dt3.title}}</td>
+   <td>{{dt3.ptcat}}</td>
+   <td>{{dt3.ptpublished}}</td>
+   <td>{{dt3.user}}</td>
+  </tr>
+ {% endfor %}
+</table>
+{% endblock content %}
