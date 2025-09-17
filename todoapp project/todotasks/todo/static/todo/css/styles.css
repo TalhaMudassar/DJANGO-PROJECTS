@@ -1,0 +1,143 @@
+.App {
+  text-align: center;
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 0.4rem;
+  font-size: 1.6rem;
+}
+
+.TodoWrapper {
+  background-color: #252525;
+  margin-top: 40px;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+.TodoForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.todo-input {
+  outline: none;
+  background: none;
+  border: 1px solid #8758ff;
+  padding: 0.45rem 0.9rem;
+  width: 280px;
+  color: #fff;
+  margin-right: 0;
+  border-radius: 4px 0 0 4px;
+  font-size: 16px;
+}
+
+.todo-input::placeholder {
+  color: #ffffff4d;
+  font-size: 15px;
+}
+
+.todo-btn {
+  background: #8758ff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  font-size: 16px;
+}
+
+.Todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffff00a9;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin-bottom: 0.8rem;
+  font-size: 17px;
+  margin: 8px;
+}
+
+.scr {
+  overflow-y: scroll;
+  max-height: 350px;
+}
+.scr::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scr::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.fa-trash, .fa-pen-to-square {
+  margin-left: 0.6rem;
+  font-size: 16px;
+}
+
+.completed {
+  color: #c5aeff;
+  text-decoration: line-through;
+}
+
+.todo-btn:hover {
+  background: #8758ff;
+  color: #fff;
+  box-shadow: 0 0 8px #8758ff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.todo-green {
+  background-color: rgba(0, 128, 0, 0.7);
+}
+
+.todo-red {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+.anca {
+  font-size: 22px;
+  margin-top: 6px;
+}
+
+.heads {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  margin-bottom: 1rem;
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+  margin-right: 8px;
+  transform: scale(1.1);
+}
+
+.todo-content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.todo-text {
+  margin-left: 8px;
+  flex: 1;
+  text-align: left;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 10px;
+}
