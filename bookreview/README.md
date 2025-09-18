@@ -1,7 +1,7 @@
 # 📚 Book Management System using Django
 
 ## 📸 Project Screenshot
-![Screenshot](book\static\book\ss.png)
+![Screenshot](book/static/book/ss.png)
 
 
 ## 📝 Description
