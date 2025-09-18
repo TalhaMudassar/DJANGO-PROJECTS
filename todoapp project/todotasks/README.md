@@ -47,6 +47,7 @@ Implement task categories and tags
 Add progress tracking with charts
 Create a mobile-friendly responsive UI
 
+
 👨‍💻 Author: Talha Mudassar
 📂 Repository: DJANGO-PROJECTS
 
