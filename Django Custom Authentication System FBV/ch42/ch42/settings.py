@@ -102,11 +102,12 @@ SITE_NAME = 'Auth System'
 # --- Email (Mailtrap SMTP) ---------------------------------------------------
 # ⚠️ In production, use env vars for secrets.
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'live.smtp.mailtrap.io'
-EMAIL_HOST_USER = 'api'
-EMAIL_HOST_PASSWORD = '21b5b11c16d665d4847fe6cb1141c06d'
-EMAIL_PORT = 587
+EMAIL_HOST = 'smtp.mailtrap.io'   # 
+EMAIL_HOST_USER = 'a073c2471b7a21'
+EMAIL_HOST_PASSWORD = '06dac15cdec9a4'
+EMAIL_PORT = 2525
 EMAIL_USE_TLS = True
+
 
 # --- Auth redirects -----------------------------------------------------------
 LOGOUT_REDIRECT_URL = 'login'

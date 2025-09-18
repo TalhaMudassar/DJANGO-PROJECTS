@@ -41,7 +41,7 @@ def send_reset_password_email(recipient_email, reset_url):
     Context: reset_url
     """
     subject = 'Reset Your Password on ' + settings.SITE_NAME
-    from_email = 'no_reply@demomailtrap.co'  # as in your code
+    from_email = 'no_reply@demomailtrap.com'  # as in your code
     to_email = [recipient_email]
 
     html_content = render_to_string('account/reset_password_email.html', {'reset_url': reset_url})
