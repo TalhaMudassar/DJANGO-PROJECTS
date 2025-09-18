@@ -28,5 +28,3 @@ This project is a multi-user todo application built using Django. It allows user
 ## Usage
 1. Access the application through your browser at `http://localhost:8000/`
 2. Register as a new user or log in with an existing account
-3. Add and manage your todo tasks
-4. Collaborate with other users by assigning tasks to them
