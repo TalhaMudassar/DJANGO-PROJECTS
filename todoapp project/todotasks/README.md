@@ -1,13 +1,11 @@
 # Multi User Todo Application using Django
 
 ## Project Screenshots
-<p align="center">
-  <img src="todo/static/todo/images/screenshot1.png" alt="Screenshot1" width="450"/>
-  <img src="todo/static/todo/images/screenshot2.png" alt="Screenshot2" width="450"/>
-  <img src="todo/static/todo/images/screenshot3.png" alt="Screenshot3" width="450"/>
-</p>
+<img src="todo/static/todo/images/screenshot1.png" alt="Screenshot1" width="900"/>
 
+<img src="todo/static/todo/images/screenshot2.png" alt="Screenshot2" width="900"/>
 
+<img src="todo/static/todo/images/screenshot3.png" alt="Screenshot3" width="900"/>
 
 ## Description
 This project is a multi-user todo application built using Django. It allows users to create, manage, and track their tasks in a collaborative environment. 
